@@ -68,7 +68,7 @@ class BrandAdapter(private val items: MutableList<BrandModel>) :
             holder.binding.mainLayout.setBackgroundResource(R.drawable.grey_bg)
             ImageViewCompat.setImageTintList(
                 holder.binding.pic,
-                ColorStateList.valueOf(context.getColor(R.color.white))
+                ColorStateList.valueOf(context.getColor(R.color.black))
             )
 
             holder.binding.title.visibility = View.GONE
