@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation (libs.gson)
     implementation(libs.glide)
     implementation(libs.annotations)
     annotationProcessor(libs.compiler)
