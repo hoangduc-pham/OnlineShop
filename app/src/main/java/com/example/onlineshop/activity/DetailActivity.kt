@@ -2,31 +2,28 @@ package com.example.onlineshop.activity
 
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.onlineshop.Helper.ManagmentCart
-import com.example.onlineshop.R
+import com.example.onlineshop.Helper.ManagementCart
 import com.example.onlineshop.adapter.ColorAdapter
 import com.example.onlineshop.adapter.SizeAdapter
 import com.example.onlineshop.adapter.SliderAdapter
 import com.example.onlineshop.databinding.ActivityDetailBinding
 import com.example.onlineshop.model.ItemsModel
 import com.example.onlineshop.model.SliderModel
-import java.util.ResourceBundle.getBundle
 
 class DetailActivity : BaseActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var item: ItemsModel
     private var numberOder=1
-    private lateinit var managmentCart: ManagmentCart
+    private lateinit var managementCart: ManagementCart
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        managmentCart = ManagmentCart(this)
+        managementCart = ManagementCart(this)
         getBundle()
         banners()
         initLists()
@@ -77,7 +74,7 @@ class DetailActivity : BaseActivity() {
         binding.ratingTxt.text = "${item.rating} Rating"
         binding.addToCartBtn.setOnClickListener{
             item.numberInCart=numberOder
-            managmentCart.insertFood(item)
+            managementCart.insertFood(item)
         }
         binding.backBtn.setOnClickListener{
             finish()
